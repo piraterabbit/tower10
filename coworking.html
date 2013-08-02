@@ -1,245 +1,497 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Muli:300,400' rel='stylesheet' type='text/css'>
+<head>
+	<meta charset="UTF-8">
+	<title>Animated hover box text form beneath</title>
+	<link rel="stylesheet" href="css/thumb.css">
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="javascritps/thumb.js"></script>
+	<!--[if gte IE 9]>
+	  <style type="text/css">
+	    .gradient {
+	       filter: none;
+	    }
+	  </style>
+	<![endif]-->
 
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <link rel="stylesheet" href="css/jquery-ui.css" />
     <link rel="stylesheet" href="css/style.css" />
 
 </head>
-<body onload="initialize()">     
+<body onload="initialize()" id="body" class="preload">     
 
   <div id='main'>
 
     <nav>
       <ul>
-        <li><a href="index.html"><h1>Tower 10</h1></li>
-        <li><a href="index10.html"><span>c</span>Office</a></li>
-        <li class="selected"><a href="coworking.html"><span>i</span>Co-working</a></li>
+        <li><a href="index.html"><h1>Tower 10</h1></a></li>
+        <li><a href="rent.html"><span>c</span>Rent</a></li>
+        <li><a href="office.html"><span>u</span>Office Share</a></li>
+        <li class="selected"><a href="coworking.html"><span>i</span>Coworking</a></li>
         <li><a href="saved.html"><span>t</span>Saved</a></li>
       </ul>
     </nav>
 
-    <section id="filter">
-      <h3>Refine Search</h3>
+    <section id="search">
+    	<ul id="filter_nav">
+			<li class="search"><a href="saved.html">Rental search</a></li>
+	  	</ul>
 
+	  	<form style="padding:6%;">
+				<!--<label for="amount2">Price range:</label>-->
+				<input type="text" id="amount2" style="margin-bottom:1.2em;" />
+				<div id="slider-range2" style="margin-bottom:1em;"></div>
 
-      <!--<label for="amount">Price range:</label>-->
-      <input type="text" id="amount" style="margin-bottom:.6em;" />
-      <div id="slider-range" style="margin-bottom:1em;"></div>
+				<!--<label for="amount">Price range:</label>-->
+	      <input type="text" id="amount" style="margin-bottom:1.2em;" />
+	      <div id="slider-range" style="margin-bottom:2em;"></div>
 
-      <!--<label for="amount2">Price range:</label>-->
-      <input type="text" id="amount2" style="margin-bottom:.6em;" />
-      <div id="slider-range2" style="margin-bottom:1em;"></div>
+	      <ul class="tag_cloud">
+	        <li class="selected"><a href="office.html">All</a></li>
+	        <li><a href="office.html">Sub-let</a></li>
+	      </ul>
+	    </form>
 
-      <label class="checkbox" for="checkbox1">
-      <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox">
-      Fixed
-      </label>
-
-      <label class="checkbox" for="checkbox2">
-      <input type="checkbox" checked="checked" value="" id="checkbox2" data-toggle="checkbox" checked="">
-      Hot Desk
-      </label>
-
-      <label class="checkbox" for="checkbox2">
-      <input type="checkbox" checked="checked" value="" id="checkbox2" data-toggle="checkbox" checked="">
-      Leased line / WiFi
-      </label>
-
-      <label class="checkbox" for="checkbox2">
-      <input type="checkbox" checked="checked" value="" id="checkbox2" data-toggle="checkbox" checked="">
-      Kitchen
-      </label>
-
-      <label class="checkbox" for="checkbox2">
-      <input type="checkbox" checked="checked" value="" id="checkbox2" data-toggle="checkbox" checked="">
-      Free Tea/Coffee
-      </label>
-
-      <label class="checkbox" for="checkbox2">
-      <input type="checkbox" checked="checked" value="" id="checkbox2" data-toggle="checkbox" checked="">
-      Events room
-      </label>
-
-      <label class="checkbox" for="checkbox2">
-      <input type="checkbox" checked="checked" value="" id="checkbox2" data-toggle="checkbox" checked="">
-      Lockable Storage
-      </label>
-
-      <label class="checkbox" for="checkbox2">
-      <input type="checkbox" checked="checked" value="" id="checkbox2" data-toggle="checkbox" checked="">
-      Printing
-      </label>
-
-      <label class="checkbox" for="checkbox2">
-      <input type="checkbox" checked="checked" value="" id="checkbox2" data-toggle="checkbox" checked="">
-      Showers
-      </label>
-
-      <label class="checkbox" for="checkbox2">
-      <input type="checkbox" checked="checked" value="" id="checkbox2" data-toggle="checkbox" checked="">
-      Breakout Area
-      </label>
-
-      <label class="checkbox" for="checkbox2">
-      <input type="checkbox" checked="checked" value="" id="checkbox2" data-toggle="checkbox" checked="">
-      Bike Storage
-      </label>
-
-    </section>  
-
-    <section id="listing">
-      <header class="sort">
-        <h3 class="prop_count">
-          143 results
-        </h3>
-
-        <ul>
-          <li><a href="">Price</a></li>
-        </ul>
-      </header>
-
-      <ol>
-        <li class="listing">
-          <section class="photo">
-            <img src="images/office.jpg" />
-          </section>
-          <aside>
-            <ul class="functions">
-              <li class="save">t</li>
-            </ul>
-            <img src="images/th_logo_250.png" />
-            <h3>Techhub</h3>
-            <address>1 East Poultry Avenue, London EC1A 9PT</address>
-            
-            <p>110 Fixed, 45 hot desks</p>
-          </aside>
-        </li>
-
-        <li class="listing">
-          <section class="photo">
-            <img src="images/office2.jpg" />
-          </section>
-          <aside>
-            <ul class="functions">
-              <li class="save">t</li>
-            </ul>
-            <img src="images/Innovation_Warehouse_Logo.png" />
-            <h3>Innovation Warehouse</h3>
-            <address>1 East Poultry Avenue, London EC1A 9PT</address>
-            
-            <p>110 Fixed, 45 hot desks</p>
-          </aside>
-        </li>
-
-        <li class="listing">
-          <section class="photo">
-            <img src="images/office.jpg" />
-          </section>
-          <aside>
-            <ul class="functions">
-              <li class="save">t</li>
-            </ul>
-            <img src="images/th_logo_250.png" />
-            <h3>Techhub</h3>
-            <address>1 East Poultry Avenue, London EC1A 9PT</address>
-            
-            <p>110 Fixed, 45 hot desks</p>
-          </aside>
-        </li>
-
-        <li class="listing">
-          <section class="photo">
-            <img src="images/office2.jpg" />
-          </section>
-          <aside>
-            <ul class="functions">
-              <li class="save">t</li>
-            </ul>
-            <img src="images/Innovation_Warehouse_Logo.png" />
-            <h3>Innovation Warehouse</h3>
-            <address>1 East Poultry Avenue, London EC1A 9PT</address>
-            
-            <p>110 Fixed, 45 hot desks</p>
-          </aside>
-        </li>
-
-        <li class="listing">
-          <section class="photo">
-            <img src="images/office.jpg" />
-          </section>
-          <aside>
-            <ul class="functions">
-              <li class="save">t</li>
-            </ul>
-            <img src="images/th_logo_250.png" />
-            <h3>Techhub</h3>
-            <address>1 East Poultry Avenue, London EC1A 9PT</address>
-            
-            <p>110 Fixed, 45 hot desks</p>
-          </aside>
-        </li>
-
-        <li class="listing">
-          <section class="photo">
-            <img src="images/office2.jpg" />
-          </section>
-          <aside>
-            <ul class="functions">
-              <li class="save">t</li>
-            </ul>
-            <img src="images/Innovation_Warehouse_Logo.png" />
-            <h3>Innovation Warehouse</h3>
-            <address>1 East Poultry Avenue, London EC1A 9PT</address>
-            
-            <p>110 Fixed, 45 hot desks</p>
-          </aside>
-        </li>
-
-        <li class="listing">
-          <section class="photo">
-            <img src="images/office.jpg" />
-          </section>
-          <aside>
-            <ul class="functions">
-              <li class="save">t</li>
-            </ul>
-            <img src="images/th_logo_250.png" />
-            <h3>Techhub</h3>
-            <address>1 East Poultry Avenue, London EC1A 9PT</address>
-            
-            <p>110 Fixed, 45 hot desks</p>
-          </aside>
-        </li>
-
-        <li class="listing">
-          <section class="photo">
-            <img src="images/office2.jpg" />
-          </section>
-          <aside>
-            <ul class="functions">
-              <li class="save">t</li>
-            </ul>
-            <img src="images/Innovation_Warehouse_Logo.png" />
-            <h3>Innovation Warehouse</h3>
-            <address>1 East Poultry Avenue, London EC1A 9PT</address>
-            
-            <p>110 Fixed, 45 hot desks</p>
-          </aside>
-        </li>
-      <ol>
+      <!--<iframe style="margin:40% 0 0 20%;" src="http://ad.uk.doubleclick.net/adi/gtr.toplevel/toplevel;l3=NULL;l4=NULL;sz=160x600;env=live;site=Bushfire;mtfIFPath=/doubleclick/;ubercat=1;loc=london;region=london;tile=9;page_type=search;dc_ref=http://www.gumtree.com/all/london/office+for+rent;pos=middle;kw=office for rent;rsi=D08734_71890;rsi=D08734_71853;rsi=D08734_71856;rsi=D08734_71863;rsi=D08734_71864;rsi=D08734_71865;rsi=D08734_71867;rsi=D08734_71868;rsi=D08734_71869;rsi=D08734_71870;rsi=D08734_71872;rsi=D08734_71873;rsi=D08734_71874;rsi=D08734_71875;rsi=D08734_71877;rsi=D08734_71878;rsi=D08734_71879;rsi=D08734_71880;rsi=D08734_71882;rsi=D08734_71883;ord=396294?" iframe-src="http://ad.uk.doubleclick.net/adi/gtr.toplevel/toplevel;l3=NULL;l4=NULL;sz=160x600;env=live;site=Bushfire;mtfIFPath=/doubleclick/;ubercat=1;loc=london;region=london;tile=9;page_type=search;dc_ref=http://www.gumtree.com/all/london/office+for+rent;pos=middle;kw=office for rent;rsi=D08734_71890;rsi=D08734_71853;rsi=D08734_71856;rsi=D08734_71863;rsi=D08734_71864;rsi=D08734_71865;rsi=D08734_71867;rsi=D08734_71868;rsi=D08734_71869;rsi=D08734_71870;rsi=D08734_71872;rsi=D08734_71873;rsi=D08734_71874;rsi=D08734_71875;rsi=D08734_71877;rsi=D08734_71878;rsi=D08734_71879;rsi=D08734_71880;rsi=D08734_71882;rsi=D08734_71883;ord=396294?" width="160" height="600" border="0" frameborder="0" scrolling="no"></iframe>-->
+ 
     </section>
-    
-    <aside>
-      <div id="map_canvas" style="width:100%; height:1200px"></div>
-    </aside>
-  </div>
 
-  
+      	
+
+     <section id="grid">
+		<header class="sort">
+		<h3 class="prop_count">
+		  143 offices for rent in London
+		</h3>
+
+		<ul>
+		  <li><a href="">Price</a></li>
+		</ul>
+		</header>
+
+		<section id="grid_listing">
+
+		<div class="container-item">
+			<div class="item">
+				<img src="images/office1.jpg" />
+				<div class="item-overlay">
+					<a href="#" class="item-button play"><i class="play"></i></a>
+					<a href="#" class="item-button share share-btn"><i class="play"></i></a>
+					<div class="sale-tag"><span>NEW</span></div>
+				</div>
+				<div class="item-content">
+					<div class="item-top-content">
+						<div class="item-top-content-inner">
+							<div class="item-product">
+								<div class="item-top-title">
+									<h2>Techhub</h2>
+									<p class="subdescription">
+									London, EC1A 9PT
+									</p>
+								</div>
+							</div>
+							<div class="item-product-price">
+								<span class="price-num">$150 <small>/pcm</small></span>
+								<p class="subdescription">110 Fixed, 45 hot desk</p>
+								<div class="old-price"></div>
+							</div>
+						</div>	
+					</div>
+					<div class="item-add-content">
+						<div class="item-add-content-inner">
+							<div class="section">
+								<img src="images/th_logo_250.jpg" class="agent" />
+								<h4>Lease</h4>
+								<p>12 months</p>
+							</div> 
+							<div class="section">
+								<a href="details.html" class="btn buy expand">View property</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-item">
+			<div class="item">
+				<img src="images/office2.jpg" />
+				<div class="item-overlay">
+					<a href="#" class="item-button play"><i class="play"></i></a>
+					<a href="#" class="item-button share share-btn"><i class="play"></i></a>
+				</div>
+				<div class="item-content">
+					<div class="item-top-content">
+						<div class="item-top-content-inner">
+							<div class="item-product">
+								<div class="item-top-title">
+									<h2>Innovation Warehouse</h2>
+									<p class="subdescription">
+									1 East Poultry Avenue, London EC1A 9PT
+									</p>
+								</div>
+							</div>
+							<div class="item-product-price">
+								<span class="price-num">$9,000 <small>/pcm</small></span>
+								<p class="subdescription">350sqm</p>
+								<div class="old-price"></div>
+							</div>
+						</div>	
+					</div>
+					<div class="item-add-content">
+						<div class="item-add-content-inner">
+							<div class="section">
+								<img src="images/Innovation_Warehouse_Logo.png" class="agent" />
+								<h4>Lease</h4>
+								<p>12 months</p>
+							</div> 
+							<div class="section">
+								<a href="details.html" class="btn buy expand">View property</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-item">
+			<div class="item">
+				<img src="images/office3.jpg" />
+				<div class="item-overlay">
+					<a href="#" class="item-button play"><i class="play"></i></a>
+					<a href="#" class="item-button share share-btn"><i class="play"></i></a>
+				</div>
+				<div class="item-content">
+					<div class="item-top-content">
+						<div class="item-top-content-inner">
+							<div class="item-product">
+								<div class="item-top-title">
+									<h2>Commercial Street</h2>
+									<p class="subdescription">
+									London E1
+									</p>
+								</div>
+							</div>
+							<div class="item-product-price">
+								<span class="price-num">$9,000 <small>/pcm</small></span>
+								<p class="subdescription">350sqm</p>
+								<div class="old-price"></div>
+							</div>
+						</div>	
+					</div>
+					<div class="item-add-content">
+						<div class="item-add-content-inner">
+							<div class="section">
+								<img src="images/agent1.jpg" class="agent" />
+								<h4>Lease</h4>
+								<p>12 months</p>
+							</div> 
+							<div class="section">
+								<a href="details.html" class="btn buy expand">View property</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-item">
+			<div class="item">
+				<img src="images/office4.jpg" />
+				<div class="item-overlay">
+					<a href="#" class="item-button play"><i class="play"></i></a>
+					<a href="#" class="item-button share share-btn"><i class="play"></i></a>
+				</div>
+				<div class="item-content">
+					<div class="item-top-content">
+						<div class="item-top-content-inner">
+							<div class="item-product">
+								<div class="item-top-title">
+									<h2>Commercial Street</h2>
+									<p class="subdescription">
+									London E1
+									</p>
+								</div>
+							</div>
+							<div class="item-product-price">
+								<span class="price-num">$9,000 <small>/pcm</small></span>
+								<p class="subdescription">350sqm</p>
+								<div class="old-price"></div>
+							</div>
+						</div>	
+					</div>
+					<div class="item-add-content">
+						<div class="item-add-content-inner">
+							<div class="section">
+								<img src="images/agent1.jpg" class="agent" />
+								<h4>Lease</h4>
+								<p>12 months</p>
+							</div> 
+							<div class="section">
+								<a href="details.html" class="btn buy expand">View property</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-item">
+			<div class="item">
+				<img src="images/office5.jpg" />
+				<div class="item-overlay">
+					<a href="#" class="item-button play"><i class="play"></i></a>
+					<a href="#" class="item-button share share-btn"><i class="play"></i></a>
+				</div>
+				<div class="item-content">
+					<div class="item-top-content">
+						<div class="item-top-content-inner">
+							<div class="item-product">
+								<div class="item-top-title">
+									<h2>Commercial Street</h2>
+									<p class="subdescription">
+									London E1
+									</p>
+								</div>
+							</div>
+							<div class="item-product-price">
+								<span class="price-num">$9,000 <small>/pcm</small></span>
+								<p class="subdescription">350sqm</p>
+								<div class="old-price"></div>
+							</div>
+						</div>	
+					</div>
+					<div class="item-add-content">
+						<div class="item-add-content-inner">
+							<div class="section">
+								<img src="images/agent1.jpg" class="agent" />
+								<h4>Lease</h4>
+								<p>12 months</p>
+							</div> 
+							<div class="section">
+								<a href="details.html" class="btn buy expand">View property</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-item">
+			<div class="item">
+				<img src="images/office6.jpg" />
+				<div class="item-overlay">
+					<a href="#" class="item-button play"><i class="play"></i></a>
+					<a href="#" class="item-button share share-btn"><i class="play"></i></a>
+				</div>
+				<div class="item-content">
+					<div class="item-top-content">
+						<div class="item-top-content-inner">
+							<div class="item-product">
+								<div class="item-top-title">
+									<h2>Commercial Street</h2>
+									<p class="subdescription">
+									London E1
+									</p>
+								</div>
+							</div>
+							<div class="item-product-price">
+								<span class="price-num">$9,000 <small>/pcm</small></span>
+								<p class="subdescription">350sqm</p>
+								<div class="old-price"></div>
+							</div>
+						</div>	
+					</div>
+					<div class="item-add-content">
+						<div class="item-add-content-inner">
+							<div class="section">
+								<img src="images/agent1.jpg" class="agent" />
+								<h4>Lease</h4>
+								<p>12 months</p>
+							</div> 
+							<div class="section">
+								<a href="details.html" class="btn buy expand">View property</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-item">
+			<div class="item">
+				<img src="images/office7.jpg" />
+				<div class="item-overlay">
+					<a href="#" class="item-button play"><i class="play"></i></a>
+					<a href="#" class="item-button share share-btn"><i class="play"></i></a>
+				</div>
+				<div class="item-content">
+					<div class="item-top-content">
+						<div class="item-top-content-inner">
+							<div class="item-product">
+								<div class="item-top-title">
+									<h2>Commercial Street</h2>
+									<p class="subdescription">
+									London E1
+									</p>
+								</div>
+							</div>
+							<div class="item-product-price">
+								<span class="price-num">$9,000 <small>/pcm</small></span>
+								<p class="subdescription">350sqm</p>
+								<div class="old-price"></div>
+							</div>
+						</div>	
+					</div>
+					<div class="item-add-content">
+						<div class="item-add-content-inner">
+							<div class="section">
+								<img src="images/agent1.jpg" class="agent" />
+								<h4>Lease</h4>
+								<p>12 months</p>
+							</div> 
+							<div class="section">
+								<a href="details.html" class="btn buy expand">View property</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-item">
+			<div class="item">
+				<img src="images/office8.jpg" />
+				<div class="item-overlay">
+					<a href="#" class="item-button play"><i class="play"></i></a>
+					<a href="#" class="item-button share share-btn"><i class="play"></i></a>
+				</div>
+				<div class="item-content">
+					<div class="item-top-content">
+						<div class="item-top-content-inner">
+							<div class="item-product">
+								<div class="item-top-title">
+									<h2>Commercial Street</h2>
+									<p class="subdescription">
+									London E1
+									</p>
+								</div>
+							</div>
+							<div class="item-product-price">
+								<span class="price-num">$9,000 <small>/pcm</small></span>
+								<p class="subdescription">350sqm</p>
+								<div class="old-price"></div>
+							</div>
+						</div>	
+					</div>
+					<div class="item-add-content">
+						<div class="item-add-content-inner">
+							<div class="section">
+								<img src="images/agent1.jpg" class="agent" />
+								<h4>Lease</h4>
+								<p>12 months</p>
+							</div> 
+							<div class="section">
+								<a href="details.html" class="btn buy expand">View property</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-item">
+			<div class="item">
+				<img src="images/office1.jpg" />
+				<div class="item-overlay">
+					<a href="#" class="item-button play"><i class="play"></i></a>
+					<a href="#" class="item-button share share-btn"><i class="play"></i></a>
+				</div>
+				<div class="item-content">
+					<div class="item-top-content">
+						<div class="item-top-content-inner">
+							<div class="item-product">
+								<div class="item-top-title">
+									<h2>Commercial Street</h2>
+									<p class="subdescription">
+									London E1
+									</p>
+								</div>
+							</div>
+							<div class="item-product-price">
+								<span class="price-num">$9,000 <small>/pcm</small></span>
+								<p class="subdescription">350sqm</p>
+								<div class="old-price"></div>
+							</div>
+						</div>	
+					</div>
+					<div class="item-add-content">
+						<div class="item-add-content-inner">
+							<div class="section">
+								<img src="images/agent1.jpg" class="agent" />
+								<h4>Lease</h4>
+								<p>12 months</p>
+							</div> 
+							<div class="section">
+								<a href="details.html" class="btn buy expand">View property</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-item">
+			<div class="item">
+				<img src="images/office2.jpg" />
+				<div class="item-overlay">
+					<a href="#" class="item-button play"><i class="play"></i></a>
+					<a href="#" class="item-button share share-btn"><i class="play"></i></a>
+				</div>
+				<div class="item-content">
+					<div class="item-top-content">
+						<div class="item-top-content-inner">
+							<div class="item-product">
+								<div class="item-top-title">
+									<h2>Commercial Street</h2>
+									<p class="subdescription">
+									London E1
+									</p>
+								</div>
+							</div>
+							<div class="item-product-price">
+								<span class="price-num">$9,000 <small>/pcm</small></span>
+								<p class="subdescription">350sqm</p>
+								<div class="old-price"></div>
+							</div>
+						</div>	
+					</div>
+					<div class="item-add-content">
+						<div class="item-add-content-inner">
+							<div class="section">
+								<img src="images/agent1.jpg" class="agent" />
+								<h4>Lease</h4>
+								<p>12 months</p>
+							</div> 
+							<div class="section">
+								<a href="details.html" class="btn buy expand">View property</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		</section>
+	</section>
+
+	<section id="map">
+      <div id="map_canvas" style="width:100%; height:1200px"></div>
+    </section> 
+    
+  </div>
 
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>

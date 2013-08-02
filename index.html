@@ -1,24 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
+<head>
+	<meta charset="UTF-8">
+	<title>Animated hover box text form beneath</title>
+	<link rel="stylesheet" href="css/thumb.css">
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="javascritps/thumb.js"></script>
+	<!--[if gte IE 9]>
+	  <style type="text/css">
+	    .gradient {
+	       filter: none;
+	    }
+	  </style>
+	<![endif]-->
 
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Muli:300,400' rel='stylesheet' type='text/css'>
-
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <link rel="stylesheet" href="css/jquery-ui.css" />
     <link rel="stylesheet" href="css/style.css" />
 
 </head>
-<body onload="initialize()">     
+<body onload="initialize()" id="body" class="preload">     
 
   <div id='main'>
 
     <nav>
       <ul>
         <li class="selected"><a href="index.html"><h1>Tower 10</h1></li>
-        <li><a href="office.html"><span>c</span>Rent</a></li>
+        <li><a href="rent.html"><span>c</span>Rent</a></li>
         <li><a href="office.html"><span>u</span>Office Share</a></li>
         <li><a href="coworking.html"><span>i</span>Coworking</a></li>
         <li><a href="saved.html"><span>t</span>Saved</a></li>
@@ -38,7 +47,7 @@
       </ul>
     </section>
 
-     <section id="listing">
+     <section id="grid">
       <header class="sort">
         <h3 class="prop_count">
           What's Hot
@@ -49,147 +58,422 @@
         </ul>
       </header>
 
-      <ol>
-        <li class="listing">
-          <section>
-            <img src="images/office6.jpg" />
-          </section>
-          <aside>
-            <ul class="functions">
-              <li class="save">t</li>
-            </ul>
-            
-            <h3>$9,000 pcm</h3>
-            <address>Commercial Street, London E1</address>
-            <p>12month Lease, 350sqft</p>
-            <img src="images/agent2.jpg" />
-            
-          </aside>
-        </li>
-        <a href="details3.html">
-        <li class="listing">
+<section id="grid_listing">
 
-            <section>
-              <img src="images/office8.jpg" />
-            </section>
-            <aside>
-              <ul class="functions">
-                <li class="save">t</li>
-              </ul>
-              <h3>$8,200 pcm</h3>
-              <address>Commercial Street, London E1</address>
-              <p>12month Lease, 350sqft</p>
-              <img src="images/agent2.jpg" />
-            </aside>
-        </li>
-      </a>
+		<div class="container-item">
+			<div class="item">
+				<img src="images/office1.jpg" />
+				<div class="item-overlay">
+					<a href="#" class="item-button play"><i class="play"></i></a>
+					<a href="#" class="item-button share share-btn"><i class="play"></i></a>
+					<div class="sale-tag"><span>NEW</span></div>
+				</div>
+				<div class="item-content">
+					<div class="item-top-content">
+						<div class="item-top-content-inner">
+							<div class="item-product">
+								<div class="item-top-title">
+									<h2>Commercial Street</h2>
+									<p class="subdescription">
+									London E1
+									</p>
+								</div>
+							</div>
+							<div class="item-product-price">
+								<span class="price-num">$9,000 <small>/pcm</small></span>
+								<p class="subdescription">350sqm</p>
+								<div class="old-price"></div>
+							</div>
+						</div>	
+					</div>
+					<div class="item-add-content">
+						<div class="item-add-content-inner">
+							<div class="section">
+								<img src="images/agent1.jpg" class="agent" />
+								<h4>Lease</h4>
+								<p>12 months</p>
+							</div> 
+							<div class="section">
+								<a href="details.html" class="btn buy expand">View property</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <li class="listing">
-          <section>
-            <img src="images/office3.jpg" />
-          </section>
-          <aside>
-            <ul class="functions">
-              <li class="save">t</li>
-            </ul>
-            <h3>$8,120 pcm</h3>
-            <address>Commercial Street, London E1</address>
-            <p>12month Lease, 350sqft</p>
-            <img src="images/agent2.jpg" />
-          </aside>
-        </li>
+		<div class="container-item">
+			<div class="item">
+				<img src="images/office2.jpg" />
+				<div class="item-overlay">
+					<a href="#" class="item-button play"><i class="play"></i></a>
+					<a href="#" class="item-button share share-btn"><i class="play"></i></a>
+				</div>
+				<div class="item-content">
+					<div class="item-top-content">
+						<div class="item-top-content-inner">
+							<div class="item-product">
+								<div class="item-top-title">
+									<h2>Commercial Street</h2>
+									<p class="subdescription">
+									London E1
+									</p>
+								</div>
+							</div>
+							<div class="item-product-price">
+								<span class="price-num">$9,000 <small>/pcm</small></span>
+								<p class="subdescription">350sqm</p>
+								<div class="old-price"></div>
+							</div>
+						</div>	
+					</div>
+					<div class="item-add-content">
+						<div class="item-add-content-inner">
+							<div class="section">
+								<img src="images/agent1.jpg" class="agent" />
+								<h4>Lease</h4>
+								<p>12 months</p>
+							</div> 
+							<div class="section">
+								<a href="details.html" class="btn buy expand">View property</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <li class="listing">
-          <section>
-            <img src="images/office1.jpg" />
-          </section>
-          <aside>
-            <ul class="functions">
-              <li class="save">t</li>
-            </ul>
-            <h3>$7,810 pcm</h3>
-            <address>Commercial Street, London E1</address>
-            <p>12month Lease, 350sqft</p>
-            <img src="images/agent2.jpg" />
-          </aside>
-        </li>
+		<div class="container-item">
+			<div class="item">
+				<img src="images/office3.jpg" />
+				<div class="item-overlay">
+					<a href="#" class="item-button play"><i class="play"></i></a>
+					<a href="#" class="item-button share share-btn"><i class="play"></i></a>
+				</div>
+				<div class="item-content">
+					<div class="item-top-content">
+						<div class="item-top-content-inner">
+							<div class="item-product">
+								<div class="item-top-title">
+									<h2>Commercial Street</h2>
+									<p class="subdescription">
+									London E1
+									</p>
+								</div>
+							</div>
+							<div class="item-product-price">
+								<span class="price-num">$9,000 <small>/pcm</small></span>
+								<p class="subdescription">350sqm</p>
+								<div class="old-price"></div>
+							</div>
+						</div>	
+					</div>
+					<div class="item-add-content">
+						<div class="item-add-content-inner">
+							<div class="section">
+								<img src="images/agent1.jpg" class="agent" />
+								<h4>Lease</h4>
+								<p>12 months</p>
+							</div> 
+							<div class="section">
+								<a href="details.html" class="btn buy expand">View property</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <li class="listing">
-          <section>
-            <img src="images/office2.jpg" />
-          </section>
-          <aside>
-            <ul class="functions">
-              <li class="save">t</li>
-            </ul>
-            <h3>$6,200 pcm</h3>
-            <address>Commercial Street, London E1</address>
-            <p>12month Lease, 350sqft</p>
-            <img src="images/agent2.jpg" />
-          </aside>
-        </li>
+		<div class="container-item">
+			<div class="item">
+				<img src="images/office4.jpg" />
+				<div class="item-overlay">
+					<a href="#" class="item-button play"><i class="play"></i></a>
+					<a href="#" class="item-button share share-btn"><i class="play"></i></a>
+				</div>
+				<div class="item-content">
+					<div class="item-top-content">
+						<div class="item-top-content-inner">
+							<div class="item-product">
+								<div class="item-top-title">
+									<h2>Commercial Street</h2>
+									<p class="subdescription">
+									London E1
+									</p>
+								</div>
+							</div>
+							<div class="item-product-price">
+								<span class="price-num">$9,000 <small>/pcm</small></span>
+								<p class="subdescription">350sqm</p>
+								<div class="old-price"></div>
+							</div>
+						</div>	
+					</div>
+					<div class="item-add-content">
+						<div class="item-add-content-inner">
+							<div class="section">
+								<img src="images/agent1.jpg" class="agent" />
+								<h4>Lease</h4>
+								<p>12 months</p>
+							</div> 
+							<div class="section">
+								<a href="details.html" class="btn buy expand">View property</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <li class="listing">
-          <section>
-            <img src="images/office4.jpg" />
-          </section>
-          <aside>
-            <ul class="functions">
-              <li class="save">t</li>
-            </ul>
-            <h3>$9,000 pcm</h3>
-            <address>Commercial Street, London E1</address>
-            <p>12month Lease, 350sqft</p>
-            <img src="images/agent2.jpg" />
-          </aside>
-        </li>
+		<div class="container-item">
+			<div class="item">
+				<img src="images/office5.jpg" />
+				<div class="item-overlay">
+					<a href="#" class="item-button play"><i class="play"></i></a>
+					<a href="#" class="item-button share share-btn"><i class="play"></i></a>
+				</div>
+				<div class="item-content">
+					<div class="item-top-content">
+						<div class="item-top-content-inner">
+							<div class="item-product">
+								<div class="item-top-title">
+									<h2>Commercial Street</h2>
+									<p class="subdescription">
+									London E1
+									</p>
+								</div>
+							</div>
+							<div class="item-product-price">
+								<span class="price-num">$9,000 <small>/pcm</small></span>
+								<p class="subdescription">350sqm</p>
+								<div class="old-price"></div>
+							</div>
+						</div>	
+					</div>
+					<div class="item-add-content">
+						<div class="item-add-content-inner">
+							<div class="section">
+								<img src="images/agent1.jpg" class="agent" />
+								<h4>Lease</h4>
+								<p>12 months</p>
+							</div> 
+							<div class="section">
+								<a href="details.html" class="btn buy expand">View property</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <li class="listing">
-          <section>
-            <img src="images/office5.jpg" />
-          </section>
-          <aside>
-            <ul class="functions">
-              <li class="save">t</li>
-            </ul>
-            <h3>$9,000 pcm</h3>
-            <address>Commercial Street, London E1</address>
-            <p>12month Lease, 350sqft</p>
-            <img src="images/agent2.jpg" />
-          </aside>
-        </li>
+		<div class="container-item">
+			<div class="item">
+				<img src="images/office6.jpg" />
+				<div class="item-overlay">
+					<a href="#" class="item-button play"><i class="play"></i></a>
+					<a href="#" class="item-button share share-btn"><i class="play"></i></a>
+				</div>
+				<div class="item-content">
+					<div class="item-top-content">
+						<div class="item-top-content-inner">
+							<div class="item-product">
+								<div class="item-top-title">
+									<h2>Commercial Street</h2>
+									<p class="subdescription">
+									London E1
+									</p>
+								</div>
+							</div>
+							<div class="item-product-price">
+								<span class="price-num">$9,000 <small>/pcm</small></span>
+								<p class="subdescription">350sqm</p>
+								<div class="old-price"></div>
+							</div>
+						</div>	
+					</div>
+					<div class="item-add-content">
+						<div class="item-add-content-inner">
+							<div class="section">
+								<img src="images/agent1.jpg" class="agent" />
+								<h4>Lease</h4>
+								<p>12 months</p>
+							</div> 
+							<div class="section">
+								<a href="details.html" class="btn buy expand">View property</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <li class="listing">
-          <section>
-            <img src="images/office.jpg" />
-          </section>
-          <aside>
-            <ul class="functions">
-              <li class="save">t</li>
-            </ul>
-            <h3>$9,000 pcm</h3>
-            <address>Commercial Street, London E1</address>
-            <p>12month Lease, 350sqft</p>
-            <img src="images/agent2.jpg" />
-          </aside>
-        </li>
+		<div class="container-item">
+			<div class="item">
+				<img src="images/office7.jpg" />
+				<div class="item-overlay">
+					<a href="#" class="item-button play"><i class="play"></i></a>
+					<a href="#" class="item-button share share-btn"><i class="play"></i></a>
+				</div>
+				<div class="item-content">
+					<div class="item-top-content">
+						<div class="item-top-content-inner">
+							<div class="item-product">
+								<div class="item-top-title">
+									<h2>Commercial Street</h2>
+									<p class="subdescription">
+									London E1
+									</p>
+								</div>
+							</div>
+							<div class="item-product-price">
+								<span class="price-num">$9,000 <small>/pcm</small></span>
+								<p class="subdescription">350sqm</p>
+								<div class="old-price"></div>
+							</div>
+						</div>	
+					</div>
+					<div class="item-add-content">
+						<div class="item-add-content-inner">
+							<div class="section">
+								<img src="images/agent1.jpg" class="agent" />
+								<h4>Lease</h4>
+								<p>12 months</p>
+							</div> 
+							<div class="section">
+								<a href="details.html" class="btn buy expand">View property</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <li class="listing">
-          <section>
-            <img src="images/office.jpg" />
-          </section>
-          <aside>
-            <ul class="functions">
-              <li class="save">t</li>
-            </ul>
-            <h3>$9,000 pcm</h3>
-            <address>Commercial Street, London E1</address>
-            <p>12month Lease, 350sqft</p>
-            <img src="images/agent2.jpg" />
-          </aside>
-        </li>
-      <ol>
-    </section>
+		<div class="container-item">
+			<div class="item">
+				<img src="images/office8.jpg" />
+				<div class="item-overlay">
+					<a href="#" class="item-button play"><i class="play"></i></a>
+					<a href="#" class="item-button share share-btn"><i class="play"></i></a>
+				</div>
+				<div class="item-content">
+					<div class="item-top-content">
+						<div class="item-top-content-inner">
+							<div class="item-product">
+								<div class="item-top-title">
+									<h2>Commercial Street</h2>
+									<p class="subdescription">
+									London E1
+									</p>
+								</div>
+							</div>
+							<div class="item-product-price">
+								<span class="price-num">$9,000 <small>/pcm</small></span>
+								<p class="subdescription">350sqm</p>
+								<div class="old-price"></div>
+							</div>
+						</div>	
+					</div>
+					<div class="item-add-content">
+						<div class="item-add-content-inner">
+							<div class="section">
+								<img src="images/agent1.jpg" class="agent" />
+								<h4>Lease</h4>
+								<p>12 months</p>
+							</div> 
+							<div class="section">
+								<a href="details.html" class="btn buy expand">View property</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-item">
+			<div class="item">
+				<img src="images/office1.jpg" />
+				<div class="item-overlay">
+					<a href="#" class="item-button play"><i class="play"></i></a>
+					<a href="#" class="item-button share share-btn"><i class="play"></i></a>
+				</div>
+				<div class="item-content">
+					<div class="item-top-content">
+						<div class="item-top-content-inner">
+							<div class="item-product">
+								<div class="item-top-title">
+									<h2>Commercial Street</h2>
+									<p class="subdescription">
+									London E1
+									</p>
+								</div>
+							</div>
+							<div class="item-product-price">
+								<span class="price-num">$9,000 <small>/pcm</small></span>
+								<p class="subdescription">350sqm</p>
+								<div class="old-price"></div>
+							</div>
+						</div>	
+					</div>
+					<div class="item-add-content">
+						<div class="item-add-content-inner">
+							<div class="section">
+								<img src="images/agent1.jpg" class="agent" />
+								<h4>Lease</h4>
+								<p>12 months</p>
+							</div> 
+							<div class="section">
+								<a href="details.html" class="btn buy expand">View property</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-item">
+			<div class="item">
+				<img src="images/office2.jpg" />
+				<div class="item-overlay">
+					<a href="#" class="item-button play"><i class="play"></i></a>
+					<a href="#" class="item-button share share-btn"><i class="play"></i></a>
+				</div>
+				<div class="item-content">
+					<div class="item-top-content">
+						<div class="item-top-content-inner">
+							<div class="item-product">
+								<div class="item-top-title">
+									<h2>Commercial Street</h2>
+									<p class="subdescription">
+									London E1
+									</p>
+								</div>
+							</div>
+							<div class="item-product-price">
+								<span class="price-num">$9,000 <small>/pcm</small></span>
+								<p class="subdescription">350sqm</p>
+								<div class="old-price"></div>
+							</div>
+						</div>	
+					</div>
+					<div class="item-add-content">
+						<div class="item-add-content-inner">
+							<div class="section">
+								<img src="images/agent1.jpg" class="agent" />
+								<h4>Lease</h4>
+								<p>12 months</p>
+							</div> 
+							<div class="section">
+								<a href="details.html" class="btn buy expand">View property</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		</section>
+
+	</section>
     
   </div>
 
